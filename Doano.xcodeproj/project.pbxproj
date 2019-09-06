@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		164354CE1B8F816A004AEC75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164354CD1B8F816A004AEC75 /* AppDelegate.swift */; };
+		164354D01B8F816A004AEC75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164354CF1B8F816A004AEC75 /* ViewController.swift */; };
+		164354D31B8F816A004AEC75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164354D11B8F816A004AEC75 /* Main.storyboard */; };
+		164354D51B8F816A004AEC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164354D41B8F816A004AEC75 /* Assets.xcassets */; };
+		164354D81B8F816A004AEC75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164354D61B8F816A004AEC75 /* LaunchScreen.storyboard */; };
+		169961181B8F82810003605A /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169961161B8F82810003605A /* Line.swift */; };
+		169961191B8F82810003605A /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169961171B8F82810003605A /* CanvasView.swift */; };
+		60B79AEB21825FE200075A35 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B79AEA21825FE200075A35 /* Formatters.swift */; };
+		60E6640B216596980049B224 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E6640A216596980049B224 /* SeparatorView.swift */; };
+		9A1371B322928D4C00302B43 /* LabelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1371B222928D4C00302B43 /* LabelTableViewController.swift */; };
+		9A27383122EF48F100D05974 /* DrawPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27383022EF48F100D05974 /* DrawPoint.swift */; };
+		9A27383322EF4C9C00D05974 /* DrawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27383222EF4C9C00D05974 /* DrawLine.swift */; };
+		9A27387322F178B100D05974 /* DrawLineAndLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27387222F178B100D05974 /* DrawLineAndLabel.swift */; };
+		9A3BD81E22818C04004CD744 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3BD81D22818C04004CD744 /* DismissSegue.swift */; };
+		9A3BD8232281C9D0004CD744 /* PictureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3BD8222281C9D0004CD744 /* PictureTableViewController.swift */; };
+		9A3BD8262281D0C2004CD744 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3BD8252281D0C2004CD744 /* Constants.swift */; };
+		9A3BD8292282C677004CD744 /* default-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A3BD8282282C676004CD744 /* default-thumbnail.jpg */; };
+		9A5CD5DD22AF94B9008974A0 /* Line+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CD5DC22AF94B9008974A0 /* Line+Points.swift */; };
+		9A81BA9922C1D508007C01AD /* LargeToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A81BA9822C1D508007C01AD /* LargeToolbar.swift */; };
+		9A81BA9C22C1F5CA007C01AD /* Doano.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A81BA9A22C1F5CA007C01AD /* Doano.xcdatamodeld */; };
+		9A81BA9E22C47E83007C01AD /* visual-where.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A81BA9D22C47E82007C01AD /* visual-where.png */; };
+		9A81BAA122CB5CB9007C01AD /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A81BAA022CB5CB9007C01AD /* SettingTableViewController.swift */; };
+		9ADAE90C22CE2DE60032C7D3 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE90B22CE2DE60032C7D3 /* LabelViewController.swift */; };
+		9AFD149022AF621B00D93FE6 /* DiseaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFD148F22AF621B00D93FE6 /* DiseaseTableViewController.swift */; };
+		9AFD149222AF764300D93FE6 /* AnnotationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFD149122AF764300D93FE6 /* AnnotationTableViewController.swift */; };
+		BE174C3F0CD281D88745C988 /* Pods_Doano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF597B0A2FDBEA866C561548 /* Pods_Doano.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		164354CA1B8F816A004AEC75 /* Doano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doano.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		164354CD1B8F816A004AEC75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		164354CF1B8F816A004AEC75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		164354D21B8F816A004AEC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		164354D41B8F816A004AEC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		164354D71B8F816A004AEC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		164354D91B8F816A004AEC75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		169961161B8F82810003605A /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		169961171B8F82810003605A /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		60B79AEA21825FE200075A35 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		60E6640A216596980049B224 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		9A1371B222928D4C00302B43 /* LabelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewController.swift; sourceTree = "<group>"; };
+		9A27383022EF48F100D05974 /* DrawPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawPoint.swift; sourceTree = "<group>"; };
+		9A27383222EF4C9C00D05974 /* DrawLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawLine.swift; sourceTree = "<group>"; };
+		9A27387222F178B100D05974 /* DrawLineAndLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawLineAndLabel.swift; sourceTree = "<group>"; };
+		9A3BD81D22818C04004CD744 /* DismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
+		9A3BD8222281C9D0004CD744 /* PictureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableViewController.swift; sourceTree = "<group>"; };
+		9A3BD8252281D0C2004CD744 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9A3BD8282282C676004CD744 /* default-thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "default-thumbnail.jpg"; sourceTree = "<group>"; };
+		9A5CD5DC22AF94B9008974A0 /* Line+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Line+Points.swift"; sourceTree = "<group>"; };
+		9A81BA9822C1D508007C01AD /* LargeToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeToolbar.swift; sourceTree = "<group>"; };
+		9A81BA9B22C1F5CA007C01AD /* Doano.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Doano.xcdatamodel; sourceTree = "<group>"; };
+		9A81BA9D22C47E82007C01AD /* visual-where.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visual-where.png"; sourceTree = "<group>"; };
+		9A81BAA022CB5CB9007C01AD /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		9ADAE90B22CE2DE60032C7D3 /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
+		9AFD148F22AF621B00D93FE6 /* DiseaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseTableViewController.swift; sourceTree = "<group>"; };
+		9AFD149122AF764300D93FE6 /* AnnotationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationTableViewController.swift; sourceTree = "<group>"; };
+		AF597B0A2FDBEA866C561548 /* Pods_Doano.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doano.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1F84D627CDAA986E44A28E /* Pods-Doano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doano.release.xcconfig"; path = "Target Support Files/Pods-Doano/Pods-Doano.release.xcconfig"; sourceTree = "<group>"; };
+		E102EB735E458C3CC7742E6B /* Pods-Doano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doano.debug.xcconfig"; path = "Target Support Files/Pods-Doano/Pods-Doano.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		164354C71B8F816A004AEC75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE174C3F0CD281D88745C988 /* Pods_Doano.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		164354C11B8F816A004AEC75 = {
+			isa = PBXGroup;
+			children = (
+				164354CC1B8F816A004AEC75 /* TouchCanvas */,
+				164354CB1B8F816A004AEC75 /* Products */,
+				CCC469CBF88EECEDB2091B30 /* Pods */,
+				477957BF10858D5E6C84074D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		164354CB1B8F816A004AEC75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				164354CA1B8F816A004AEC75 /* Doano.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		164354CC1B8F816A004AEC75 /* TouchCanvas */ = {
+			isa = PBXGroup;
+			children = (
+				9A27382F22EF487700D05974 /* Codables */,
+				9A5CD5DB22AF941C008974A0 /* Extensions */,
+				9A3BD8242281D08D004CD744 /* Config */,
+				9A3BD8212281C77B004CD744 /* Models */,
+				9A3BD8202281C6EF004CD744 /* Views */,
+				9A3BD81F2281C6B4004CD744 /* Controllers */,
+				9A3BD81C22818B9D004CD744 /* Segues */,
+				164354CD1B8F816A004AEC75 /* AppDelegate.swift */,
+				60C173EB216460CE00977B0A /* Resources */,
+			);
+			path = TouchCanvas;
+			sourceTree = "<group>";
+		};
+		477957BF10858D5E6C84074D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF597B0A2FDBEA866C561548 /* Pods_Doano.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		60C173EB216460CE00977B0A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9A3BD8272282C65A004CD744 /* Images */,
+				164354D41B8F816A004AEC75 /* Assets.xcassets */,
+				164354D91B8F816A004AEC75 /* Info.plist */,
+				164354D61B8F816A004AEC75 /* LaunchScreen.storyboard */,
+				164354D11B8F816A004AEC75 /* Main.storyboard */,
+				9A81BA9A22C1F5CA007C01AD /* Doano.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9A27382F22EF487700D05974 /* Codables */ = {
+			isa = PBXGroup;
+			children = (
+				9A27383022EF48F100D05974 /* DrawPoint.swift */,
+				9A27383222EF4C9C00D05974 /* DrawLine.swift */,
+				9A27387222F178B100D05974 /* DrawLineAndLabel.swift */,
+			);
+			path = Codables;
+			sourceTree = "<group>";
+		};
+		9A3BD81C22818B9D004CD744 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				9A3BD81D22818C04004CD744 /* DismissSegue.swift */,
+			);
+			path = Segues;
+			sourceTree = "<group>";
+		};
+		9A3BD81F2281C6B4004CD744 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				164354CF1B8F816A004AEC75 /* ViewController.swift */,
+				9A3BD8222281C9D0004CD744 /* PictureTableViewController.swift */,
+				9ADAE90B22CE2DE60032C7D3 /* LabelViewController.swift */,
+				9A1371B222928D4C00302B43 /* LabelTableViewController.swift */,
+				9AFD148F22AF621B00D93FE6 /* DiseaseTableViewController.swift */,
+				9AFD149122AF764300D93FE6 /* AnnotationTableViewController.swift */,
+				9A81BAA022CB5CB9007C01AD /* SettingTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9A3BD8202281C6EF004CD744 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60E6640A216596980049B224 /* SeparatorView.swift */,
+				169961171B8F82810003605A /* CanvasView.swift */,
+				9A81BA9822C1D508007C01AD /* LargeToolbar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A3BD8212281C77B004CD744 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				169961161B8F82810003605A /* Line.swift */,
+				60B79AEA21825FE200075A35 /* Formatters.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9A3BD8242281D08D004CD744 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9A3BD8252281D0C2004CD744 /* Constants.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		9A3BD8272282C65A004CD744 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9A3BD8282282C676004CD744 /* default-thumbnail.jpg */,
+				9A81BA9D22C47E82007C01AD /* visual-where.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		9A5CD5DB22AF941C008974A0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A5CD5DC22AF94B9008974A0 /* Line+Points.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CCC469CBF88EECEDB2091B30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E102EB735E458C3CC7742E6B /* Pods-Doano.debug.xcconfig */,
+				BE1F84D627CDAA986E44A28E /* Pods-Doano.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		164354C91B8F816A004AEC75 /* Doano */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 164354DC1B8F816A004AEC75 /* Build configuration list for PBXNativeTarget "Doano" */;
+			buildPhases = (
+				C72080F6B6370A553D560688 /* [CP] Check Pods Manifest.lock */,
+				164354C61B8F816A004AEC75 /* Sources */,
+				164354C71B8F816A004AEC75 /* Frameworks */,
+				164354C81B8F816A004AEC75 /* Resources */,
+				D4A8DCA94186AC6494E3DD54 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Doano;
+			productName = TouchCanvas;
+			productReference = 164354CA1B8F816A004AEC75 /* Doano.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		164354C21B8F816A004AEC75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Doai;
+				TargetAttributes = {
+					164354C91B8F816A004AEC75 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 7RBD5GD4CA;
+						LastSwiftMigration = 1020;
+					};
+				};
+			};
+			buildConfigurationList = 164354C51B8F816A004AEC75 /* Build configuration list for PBXProject "Doano" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 164354C11B8F816A004AEC75;
+			productRefGroup = 164354CB1B8F816A004AEC75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				164354C91B8F816A004AEC75 /* Doano */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		164354C81B8F816A004AEC75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A81BA9E22C47E83007C01AD /* visual-where.png in Resources */,
+				164354D81B8F816A004AEC75 /* LaunchScreen.storyboard in Resources */,
+				164354D51B8F816A004AEC75 /* Assets.xcassets in Resources */,
+				9A3BD8292282C677004CD744 /* default-thumbnail.jpg in Resources */,
+				164354D31B8F816A004AEC75 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C72080F6B6370A553D560688 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doano-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4A8DCA94186AC6494E3DD54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Doano/Pods-Doano-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doano/Pods-Doano-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		164354C61B8F816A004AEC75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AFD149022AF621B00D93FE6 /* DiseaseTableViewController.swift in Sources */,
+				60E6640B216596980049B224 /* SeparatorView.swift in Sources */,
+				9A1371B322928D4C00302B43 /* LabelTableViewController.swift in Sources */,
+				169961181B8F82810003605A /* Line.swift in Sources */,
+				9A3BD81E22818C04004CD744 /* DismissSegue.swift in Sources */,
+				9ADAE90C22CE2DE60032C7D3 /* LabelViewController.swift in Sources */,
+				164354D01B8F816A004AEC75 /* ViewController.swift in Sources */,
+				9A27383122EF48F100D05974 /* DrawPoint.swift in Sources */,
+				9A81BA9922C1D508007C01AD /* LargeToolbar.swift in Sources */,
+				9A3BD8262281D0C2004CD744 /* Constants.swift in Sources */,
+				164354CE1B8F816A004AEC75 /* AppDelegate.swift in Sources */,
+				9A5CD5DD22AF94B9008974A0 /* Line+Points.swift in Sources */,
+				9A81BA9C22C1F5CA007C01AD /* Doano.xcdatamodeld in Sources */,
+				9A27387322F178B100D05974 /* DrawLineAndLabel.swift in Sources */,
+				169961191B8F82810003605A /* CanvasView.swift in Sources */,
+				9A81BAA122CB5CB9007C01AD /* SettingTableViewController.swift in Sources */,
+				60B79AEB21825FE200075A35 /* Formatters.swift in Sources */,
+				9AFD149222AF764300D93FE6 /* AnnotationTableViewController.swift in Sources */,
+				9A3BD8232281C9D0004CD744 /* PictureTableViewController.swift in Sources */,
+				9A27383322EF4C9C00D05974 /* DrawLine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		164354D11B8F816A004AEC75 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164354D21B8F816A004AEC75 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		164354D61B8F816A004AEC75 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164354D71B8F816A004AEC75 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		164354DA1B8F816A004AEC75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		164354DB1B8F816A004AEC75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		164354DD1B8F816A004AEC75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E102EB735E458C3CC7742E6B /* Pods-Doano.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7RBD5GD4CA;
+				INFOPLIST_FILE = "$(SRCROOT)/TouchCanvas/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.doai.annotation-tool";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		164354DE1B8F816A004AEC75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE1F84D627CDAA986E44A28E /* Pods-Doano.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7RBD5GD4CA;
+				INFOPLIST_FILE = "$(SRCROOT)/TouchCanvas/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.doai.annotation-tool";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		164354C51B8F816A004AEC75 /* Build configuration list for PBXProject "Doano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				164354DA1B8F816A004AEC75 /* Debug */,
+				164354DB1B8F816A004AEC75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		164354DC1B8F816A004AEC75 /* Build configuration list for PBXNativeTarget "Doano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				164354DD1B8F816A004AEC75 /* Debug */,
+				164354DE1B8F816A004AEC75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9A81BA9A22C1F5CA007C01AD /* Doano.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9A81BA9B22C1F5CA007C01AD /* Doano.xcdatamodel */,
+			);
+			currentVersion = 9A81BA9B22C1F5CA007C01AD /* Doano.xcdatamodel */;
+			path = Doano.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 164354C21B8F816A004AEC75 /* Project object */;
+}
