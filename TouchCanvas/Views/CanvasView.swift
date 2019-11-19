@@ -3,13 +3,13 @@ import UIKit
 class CanvasView: UIView {
     // MARK: Properties
 
-    var usePreciseLocations = false {
+    var usePreciseLocations = true {
         didSet {
             needsFullRedraw = true
             setNeedsDisplay()
         }
     }
-    var isDebuggingEnabled = true { // false -> true
+    var isDebuggingEnabled = false { // false -> true
         didSet {
             needsFullRedraw = true
             setNeedsDisplay()
@@ -45,7 +45,8 @@ class CanvasView: UIView {
     /*
      선택된 라벨을 저장함. 순서는 라인과 같음.
     */
-    public var labels = [[Int]]();
+    public var labels = [[Int]]()
+    public var memo = String()
     
     /// A `CGContext` for drawing the last representation of lines no longer receiving updates into.
     private lazy var frozenContext: CGContext = {
@@ -291,7 +292,9 @@ extension CanvasView {
     }
     
     func removeLastLine() -> Void {
-        finishedLines.removeLast()
+        if !finishedLines.isEmpty {
+            finishedLines.removeLast()
+        }
         needsFullRedraw = true
         setNeedsDisplay()
     }
@@ -307,6 +310,11 @@ extension CanvasView {
         line.addSelectedProperty()
         needsFullRedraw = true
         setNeedsDisplay()
+    }
+    
+    func addSelectedPropertyIntoLastLine() -> Void {
+        let lastKey = finishedLines.count - 1
+        self.addSelectedPropertyIntoLine(at: lastKey)
     }
     
     func removeSelectedPropertyIntoLine(at nth:Int) -> Void {

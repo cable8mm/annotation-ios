@@ -121,6 +121,7 @@ class Line: NSObject {
                 context.setLineWidth(K.LINE_WIDTH)
             }
             
+            // 라인 그리기
             context.move(to: CGPoint(x: priorLocation.x, y: priorLocation.y))
             context.addLine(to: CGPoint(x: location.x, y: location.y))
             
@@ -234,7 +235,7 @@ class Line: NSObject {
     
     private func strokeColor(for point: LinePoint, useDebugColors: Bool) -> UIColor {
         // This color will used by default for `.standard` touches.
-        var color = UIColor.black
+        var color = UIColor.black  // default color
         
         let pointType = point.pointType
         if useDebugColors {
@@ -261,12 +262,12 @@ class Line: NSObject {
                 color = UIColor.purple
             }
         } else {
-            if pointType.contains(.cancelled) {
+            if pointType.contains(.selected) {
+                color = UIColor.green
+            } else if pointType.contains(.cancelled) {
                 color = UIColor.clear
             } else if pointType.contains(.finger) {
-                color = UIColor.purple
-            } else if pointType.contains(.selected) {
-                color = UIColor.red
+                color = UIColor.black
             }
             
             if pointType.contains(.predicted) && !pointType.contains(.cancelled) {

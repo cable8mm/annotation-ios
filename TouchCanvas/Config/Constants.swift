@@ -21,5 +21,6 @@ struct K {
     static let API_SERVER_PREFIX = "https://os.doai.ai/"
     static let APP_TITLE = "DoAnno"
     static let LINE_WIDTH:CGFloat = 3.0
-    static let LINE_WIDTH_SELECTED:CGFloat = 5.0
+    static let LINE_WIDTH_SELECTED:CGFloat = 3.0
+    static let LABLE_PLACEHOLDER = "Input Memo"
 }

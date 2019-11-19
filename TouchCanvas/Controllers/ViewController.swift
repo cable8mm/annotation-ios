@@ -45,9 +45,11 @@ class ViewController: UIViewController, UIPencilInteractionDelegate {
     @IBOutlet private var gagueLabelCollection: [UILabel]!
     @IBOutlet weak var pictureImageView: UIImageView!
     var pictureImage = UIImage()
+    var originalPictureImage = UIImage()    // non-filtering image
 
     // Image Process
     var brightnessFilter = CIFilter(name: "CIColorControls")!
+    var invertFilter = CIFilter(name: "CIColorInvert")!
     var aCIImage = CIImage()
     var context  = CIContext()
     var newUIImage = UIImage()
@@ -66,7 +68,12 @@ class ViewController: UIViewController, UIPencilInteractionDelegate {
         let data = try! encoder.encode(drawLinesAndLabels)
         let drawLinesAndLabelsString = String(data: data, encoding: .utf8)!
         
-        AF.request(K.API_SERVER_PREFIX + "os_findings/http_add", method: .post, parameters:["os_app_user_id":deviceId.uuidString, "os_raw_picture_id":self.currentPicture["OsRawPicture"]["id"].stringValue,"finding_plain":drawLinesAndLabelsString]).responseJSON {response in
+        AF.request(K.API_SERVER_PREFIX + "os_findings/http_add", method: .post, parameters:[
+            "os_app_user_id":deviceId.uuidString,
+            "os_raw_picture_id":self.currentPicture["OsRawPicture"]["id"].stringValue,
+            "finding_plain":drawLinesAndLabelsString,
+            "memo":self.canvasView.memo
+        ]).responseJSON {response in
             switch response.result {
             case .success(_):
                 let alert = UIAlertController(title: "Success", message: "This action can repeat.", preferredStyle: UIAlertController.Style.alert)
@@ -104,6 +111,7 @@ class ViewController: UIViewController, UIPencilInteractionDelegate {
         case .clearCanvas:
             self.trashButton.isEnabled = false
             self.status = status
+            self.setStatus(status: .annotating)
             break;
         case .diseaseSelected:
             self.status = status
@@ -140,6 +148,7 @@ class ViewController: UIViewController, UIPencilInteractionDelegate {
             self.setDrawingStatus(status: .none)
             self.trashButton.isEnabled = true
             self.locationView.isHidden = true
+            self.canvasView.addSelectedPropertyIntoLastLine()
             break
         }
     }
@@ -155,6 +164,9 @@ class ViewController: UIViewController, UIPencilInteractionDelegate {
         self.pictureImage = UIImage(cgImage: cgImage,
                                scale: self.pictureImageView.image!.scale,
                                orientation: self.pictureImageView.image!.imageOrientation)
+//        self.originalPictureImage = UIImage(cgImage: cgImage,
+//                                            scale: self.pictureImageView.image!.scale,
+//                                            orientation: self.pictureImageView.image!.imageOrientation)
         print(data)
     }
     
@@ -163,8 +175,9 @@ class ViewController: UIViewController, UIPencilInteractionDelegate {
     }
     
     /// call from LabelTableViewController
-    func saveLabels(_ labels: [Int]) -> Void {
+    func saveLabels(_ labels: [Int], memo: String) -> Void {
         self.canvasView.labels.append(labels)
+        self.canvasView.memo = memo
     }
     
     // MARK: View Life Cycle
@@ -319,17 +332,32 @@ class ViewController: UIViewController, UIPencilInteractionDelegate {
     }
 
     // MARK: Image Process
+    func changeInvert(_ value: Bool) -> Void {
+        imageInvert(imgView: pictureImageView, onoff: value, image: pictureImage)
+    }
+    
     func changeBrightness(_ value: Float) -> Void {
         imageBrightness(imgView: pictureImageView, sliderValue: CGFloat(value), image: pictureImage)
-//        guard let filter = filter, let beginImage = CIImage(image: self.pictureImage) else { return }
-//
-//        filter.setValue(beginImage, forKey: kCIInputImageKey)
-//        filter.setValue(value, forKey: kCIInputBrightnessKey)
-//        if let ciimage = filter.outputImage {
-//            let filteredImage = ciimage
-//            pictureImageView.image = UIImage(ciImage: filteredImage)
-//            print("change brightness value = \(value)")
-//        }
+    }
+    
+    func imageInvert(imgView : UIImageView, onoff : Bool, image: UIImage) {
+        if onoff {
+            let aCGImage = image.cgImage
+            aCIImage = CIImage(cgImage: aCGImage!)
+            context = CIContext(options: nil)
+
+            invertFilter.setValue(aCIImage, forKey: kCIInputImageKey)
+            
+            outputImage = invertFilter.outputImage!
+            let cgimg = context.createCGImage(outputImage, from: outputImage.extent)
+            newUIImage = UIImage(cgImage: cgimg!)
+            imgView.image = newUIImage
+            return
+        }
+
+        imgView.image = image
+        
+        print("invert")
     }
     
     func imageBrightness(imgView : UIImageView , sliderValue : CGFloat, image: UIImage){

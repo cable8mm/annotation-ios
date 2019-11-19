@@ -17,5 +17,9 @@ public struct DrawLineAndLabel: Codable {
         self.drawLines = drawLines
         self.labels = labels
     }
+    
+    func count() -> Int {
+        return self.drawLines.count
+    }
 }
 

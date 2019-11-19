@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-class LabelTableViewController: UITableViewController {
+class LabelTableViewController: UITableViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
 
     var pictureTypeId:Int   = 1
 
@@ -38,14 +38,19 @@ class LabelTableViewController: UITableViewController {
     /// - return: [Int]
     var selectedLabels = [Int]()
     
+    var tap: UITapGestureRecognizer!
+    
     let searchController = UISearchController(searchResultsController: nil)
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var sectionSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var memoTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.saveButton.isEnabled = false
+        
+        self.memoTextView.text = K.LABLE_PLACEHOLDER
         
         AF.request(K.API_SERVER_PREFIX + "os_picture_labels/index_compact.json?os_picture_type_id=" + String(self.pictureTypeId)).responseJSON {response in
             switch response.result {
@@ -73,6 +78,56 @@ class LabelTableViewController: UITableViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tap = UITapGestureRecognizer(target: self, action: #selector(onTap(sender:)))
+        tap.numberOfTapsRequired = 1
+        tap.numberOfTouchesRequired = 1
+        tap.cancelsTouchesInView = false
+        tap.delegate = self
+        self.view.window?.addGestureRecognizer(tap)
+    }
+    
+    // MARK: - Gesture
+    internal func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+
+    internal func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let location = touch.location(in: self.navigationController?.view)
+        if self.view.point(inside: location, with: nil) {
+            return false
+        }
+        else {
+            return true
+        }
+    }
+
+    @objc private func onTap(sender: UITapGestureRecognizer) {
+        self.view.window?.removeGestureRecognizer(sender)
+        self.cancel(self)
+    }
+    
+    // MARK: - TextView
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == K.LABLE_PLACEHOLDER {
+            textView.text = ""
+            textView.textColor = UIColor.black
+        }
+
+//        if textView.textColor == UIColor.lightGray {
+//            textView.text = nil
+//            textView.textColor = UIColor.black
+//        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = K.LABLE_PLACEHOLDER
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -122,7 +177,7 @@ class LabelTableViewController: UITableViewController {
         guard let parent = self.presentingViewController?.children[0] as? ViewController else {
             return
         }
-        parent.saveLabels(self.selectedLabels)
+        parent.saveLabels(self.selectedLabels, memo:self.memoTextView.text)
         dismiss(animated: true, completion: nil)
     }
     

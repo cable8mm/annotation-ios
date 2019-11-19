@@ -11,13 +11,16 @@ import Alamofire
 import SwiftyJSON
 import SDWebImage
 
-class PictureTableViewController: UITableViewController {
+class PictureTableViewController: UITableViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var titleSegmentedControl: UISegmentedControl!
     
     var rowCount = 0;
     var osAllRawPictures:JSON = [];
     var jsonPictureTypes:JSON = [];
+    
+    // https://stackoverflow.com/questions/39943265/how-to-dismiss-modal-form-sheet-when-clicking-outside-of-view
+    var tap: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +50,37 @@ class PictureTableViewController: UITableViewController {
         self.segmentSelected(sender: self.titleSegmentedControl)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+
+        tap = UITapGestureRecognizer(target: self, action: #selector(onTap(sender:)))
+        tap.numberOfTapsRequired = 1
+        tap.numberOfTouchesRequired = 1
+        tap.cancelsTouchesInView = false
+        tap.delegate = self
+        self.view.window?.addGestureRecognizer(tap)
+    }
+
+    internal func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+
+    internal func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let location = touch.location(in: self.navigationController?.view)
+
+        if self.view.point(inside: location, with: nil) {
+            return false
+        }
+        else {
+            return true
+        }
+    }
+
+    @objc private func onTap(sender: UITapGestureRecognizer) {
+
+        self.view.window?.removeGestureRecognizer(sender)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @objc func segmentSelected(sender: UISegmentedControl)
     {
         // https://os.doai.ai/os_raw_pictures.json?page=1&os_picture_type_id=1

@@ -29,6 +29,7 @@
 		9A81BA9C22C1F5CA007C01AD /* Doano.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A81BA9A22C1F5CA007C01AD /* Doano.xcdatamodeld */; };
 		9A81BA9E22C47E83007C01AD /* visual-where.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A81BA9D22C47E82007C01AD /* visual-where.png */; };
 		9A81BAA122CB5CB9007C01AD /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A81BAA022CB5CB9007C01AD /* SettingTableViewController.swift */; };
+		9ACCC340238388940008C6EF /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCC33F238388940008C6EF /* HistoryTableViewController.swift */; };
 		9ADAE90C22CE2DE60032C7D3 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAE90B22CE2DE60032C7D3 /* LabelViewController.swift */; };
 		9AFD149022AF621B00D93FE6 /* DiseaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFD148F22AF621B00D93FE6 /* DiseaseTableViewController.swift */; };
 		9AFD149222AF764300D93FE6 /* AnnotationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFD149122AF764300D93FE6 /* AnnotationTableViewController.swift */; };
@@ -60,6 +61,7 @@
 		9A81BA9B22C1F5CA007C01AD /* Doano.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Doano.xcdatamodel; sourceTree = "<group>"; };
 		9A81BA9D22C47E82007C01AD /* visual-where.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visual-where.png"; sourceTree = "<group>"; };
 		9A81BAA022CB5CB9007C01AD /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		9ACCC33F238388940008C6EF /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		9ADAE90B22CE2DE60032C7D3 /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		9AFD148F22AF621B00D93FE6 /* DiseaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseTableViewController.swift; sourceTree = "<group>"; };
 		9AFD149122AF764300D93FE6 /* AnnotationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationTableViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				9AFD148F22AF621B00D93FE6 /* DiseaseTableViewController.swift */,
 				9AFD149122AF764300D93FE6 /* AnnotationTableViewController.swift */,
 				9A81BAA022CB5CB9007C01AD /* SettingTableViewController.swift */,
+				9ACCC33F238388940008C6EF /* HistoryTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				9A81BA9922C1D508007C01AD /* LargeToolbar.swift in Sources */,
 				9A3BD8262281D0C2004CD744 /* Constants.swift in Sources */,
 				164354CE1B8F816A004AEC75 /* AppDelegate.swift in Sources */,
+				9ACCC340238388940008C6EF /* HistoryTableViewController.swift in Sources */,
 				9A5CD5DD22AF94B9008974A0 /* Line+Points.swift in Sources */,
 				9A81BA9C22C1F5CA007C01AD /* Doano.xcdatamodeld in Sources */,
 				9A27387322F178B100D05974 /* DrawLineAndLabel.swift in Sources */,
@@ -503,6 +507,7 @@
 			baseConfigurationReference = E102EB735E458C3CC7742E6B /* Pods-Doano.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 7RBD5GD4CA;
 				INFOPLIST_FILE = "$(SRCROOT)/TouchCanvas/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -520,6 +525,7 @@
 			baseConfigurationReference = BE1F84D627CDAA986E44A28E /* Pods-Doano.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 7RBD5GD4CA;
 				INFOPLIST_FILE = "$(SRCROOT)/TouchCanvas/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

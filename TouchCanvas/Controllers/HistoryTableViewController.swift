@@ -1,46 +1,38 @@
 //
-//  SettingTableViewController.swift
+//  HistoryTableViewController.swift
 //  Doano
 //
-//  Created by 이삼구 on 02/07/2019.
-//  Copyright © 2019 Apple. All rights reserved.
+//  Created by 이삼구 on 2019/11/19.
+//  Copyright © 2019 Doai. All rights reserved.
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
-class SettingTableViewController: UITableViewController {
+class HistoryTableViewController: UITableViewController {
 
-    @IBOutlet weak var brightSlider: UISlider!
-    @IBOutlet weak var brightLabel: UILabel!
-    
-    @IBAction func invertSwitchChanged(_ sender: UISwitch) {
-        guard let parent = self.presentingViewController?.children[0] as? ViewController else {
-            return
-        }
+    var osHistories:JSON = [];
 
-        parent.changeInvert(sender.isOn)
-    }
-    @IBAction func brightSliderChanged(_ sender: UISlider) {
-        let f = (sender.value * 1000).rounded()/10
-        brightLabel.text = f.description
-    }
-    
-    @IBAction func brightSliderTouchUp(_ sender: UISlider) {
-        guard let parent = self.presentingViewController?.children[0] as? ViewController else {
-            return
-        }
-        
-        parent.changeBrightness(sender.value)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        guard let deviceId = UIDevice.current.identifierForVendor else {
+            return
+        }
+        
+        AF.request(K.API_SERVER_PREFIX + "os_findings.json?os_app_user_id=" + deviceId.uuidString).responseJSON { response in
+            switch response.result {
+            case let .success(value):
+                self.osHistories = JSON(value)["data"]
+                self.tableView.reloadData()
+                break
+            case let .failure(error):
+                print(error)
+                break
+            }
+        }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -52,18 +44,17 @@ class SettingTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return self.osHistories.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-
+        cell.textLabel?.text = self.osHistories[indexPath.row]["OsFinding"]["created"].stringValue
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

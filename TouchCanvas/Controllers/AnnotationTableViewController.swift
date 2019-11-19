@@ -11,6 +11,7 @@ import UIKit
 class AnnotationTableViewController: UITableViewController {
 
     var canvasView: CanvasView!
+    var drawLineAndLabels:DrawLineAndLabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,9 @@ class AnnotationTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        
+        self.drawLineAndLabels = self.canvasView.getDrawLinesAndLabels()
+        
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         editButtonItem.isEnabled = canvasView.getLines().count == 0 ? false : true
@@ -39,7 +43,7 @@ class AnnotationTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return canvasView.getLines().count
+        return self.drawLineAndLabels?.count() ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
