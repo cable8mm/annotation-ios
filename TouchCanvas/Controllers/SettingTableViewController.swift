@@ -10,52 +10,52 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
 
-    @IBOutlet weak var brightSlider: UISlider!
-    @IBOutlet weak var brightLabel: UILabel!
-    
-    @IBAction func invertSwitchChanged(_ sender: UISwitch) {
-        guard let parent = self.presentingViewController?.children[0] as? ViewController else {
-            return
-        }
+  @IBOutlet weak var brightSlider: UISlider!
+  @IBOutlet weak var brightLabel: UILabel!
 
-        parent.changeInvert(sender.isOn)
-    }
-    @IBAction func brightSliderChanged(_ sender: UISlider) {
-        let f = (sender.value * 1000).rounded()/10
-        brightLabel.text = f.description
-    }
-    
-    @IBAction func brightSliderTouchUp(_ sender: UISlider) {
-        guard let parent = self.presentingViewController?.children[0] as? ViewController else {
-            return
-        }
-        
-        parent.changeBrightness(sender.value)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+  @IBAction func invertSwitchChanged(_ sender: UISwitch) {
+    guard let parent = self.presentingViewController?.children[0] as? ViewController else {
+      return
     }
 
-    // MARK: - Table view data source
+    parent.changeInvert(sender.isOn)
+  }
+  @IBAction func brightSliderChanged(_ sender: UISlider) {
+    let f = (sender.value * 1000).rounded() / 10
+    brightLabel.text = f.description
+  }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+  @IBAction func brightSliderTouchUp(_ sender: UISlider) {
+    guard let parent = self.presentingViewController?.children[0] as? ViewController else {
+      return
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 5
-    }
+    parent.changeBrightness(sender.value)
+  }
 
-    /*
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    // Uncomment the following line to preserve selection between presentations
+    // self.clearsSelectionOnViewWillAppear = false
+
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem
+  }
+
+  // MARK: - Table view data source
+
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    // #warning Incomplete implementation, return the number of sections
+    return 1
+  }
+
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // #warning Incomplete implementation, return the number of rows
+    return 5
+  }
+
+  /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
@@ -65,7 +65,7 @@ class SettingTableViewController: UITableViewController {
     }
     */
 
-    /*
+  /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -73,7 +73,7 @@ class SettingTableViewController: UITableViewController {
     }
     */
 
-    /*
+  /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -81,18 +81,18 @@ class SettingTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
-    /*
+  /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
     }
     */
 
-    /*
+  /*
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
@@ -100,7 +100,7 @@ class SettingTableViewController: UITableViewController {
     }
     */
 
-    /*
+  /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

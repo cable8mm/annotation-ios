@@ -10,16 +10,15 @@ import Foundation
 import UIKit
 
 public struct DrawLineAndLabel: Codable {
-    let drawLines: [DrawLine]
-    let labels: [[Int]]
-    
-    init(drawLines: [DrawLine], labels: [[Int]]) {
-        self.drawLines = drawLines
-        self.labels = labels
-    }
-    
-    func count() -> Int {
-        return self.drawLines.count
-    }
-}
+  let drawLines: [DrawLine]
+  let labels: [[Int]]
 
+  init(drawLines: [DrawLine], labels: [[Int]]) {
+    self.drawLines = drawLines
+    self.labels = labels
+  }
+
+  func count() -> Int {
+    return self.drawLines.count
+  }
+}

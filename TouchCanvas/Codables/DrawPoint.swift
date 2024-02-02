@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 public struct DrawPoint: Codable {
-    let sequenceNumber: Int
-    let timestamp: TimeInterval
-    let x: CGFloat
-    let y: CGFloat
-    
-    init(sequenceNumber: Int, timestamp: TimeInterval, x: CGFloat, y: CGFloat) {
-        self.sequenceNumber = sequenceNumber
-        self.timestamp = timestamp
-        self.x = x
-        self.y = y
-    }
+  let sequenceNumber: Int
+  let timestamp: TimeInterval
+  let x: CGFloat
+  let y: CGFloat
+
+  init(sequenceNumber: Int, timestamp: TimeInterval, x: CGFloat, y: CGFloat) {
+    self.sequenceNumber = sequenceNumber
+    self.timestamp = timestamp
+    self.x = x
+    self.y = y
+  }
 }
