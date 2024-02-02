@@ -1,6 +1,6 @@
 # Annotation tools for iPad
 
-![Resource for annotation](TouchCanvas/Resources/images/visual-where.png)
+![Resource for annotation](/TouchCanvas/Resources/images/visual-where.png?raw=true)
 
 [![Swift Format Lint](https://github.com/cable8mm/annotation-ios/actions/workflows/swift-format-lint.yml/badge.svg)](https://github.com/cable8mm/annotation-ios/actions/workflows/swift-format-lint.yml)
 [![Latest release](https://img.shields.io/github/v/release/cable8mm/annotation-ios?sort=semver)](https://github.com/cable8mm/annotation-ios/releases/latest)
